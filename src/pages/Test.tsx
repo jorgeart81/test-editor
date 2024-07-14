@@ -1,6 +1,8 @@
+import { DragEvent, useState } from 'react';
+
 import { SaveOutlined } from '@mui/icons-material';
 import { Box, Button, Container, Paper, Stack, styled, Typography } from '@mui/material';
-import { DragEvent, useState } from 'react';
+import { DropContainer } from '../components/DragAndDrop';
 
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -63,12 +65,12 @@ export const Test = () => {
 					<Container sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
 						{/* Drop container */}
 						<Typography>Question</Typography>
-						<Box
-							component='div'
+						<DropContainer
+							dropType='question'
 							onDragOver={handleDragOver}
 							onDragLeave={handleDragLeave}
 							onDrop={handleOnDrop}
-							sx={{ width: '100%', minHeight: '360px', border: 1, borderRadius: 1, opacity: isOnDragOver ? 0.7 : 1 }}>
+							isOnDragOver={isOnDragOver}>
 							<Stack spacing={1}>
 								{dropItems.length > 0 ? (
 									dropItems.map((item, i) => (
@@ -80,7 +82,7 @@ export const Test = () => {
 									<Typography variant='body1'>Drag and Drop</Typography>
 								)}
 							</Stack>
-						</Box>
+						</DropContainer>
 					</Container>
 				</Container>
 
