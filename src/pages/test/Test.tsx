@@ -2,7 +2,7 @@ import { DragEvent, useState } from 'react';
 
 import { SaveOutlined } from '@mui/icons-material';
 import { Box, Button, Container, Paper, Stack, styled, Typography } from '@mui/material';
-import { DropContainer } from '../components/DragAndDrop';
+import { DropContainer } from '../../components/DragAndDrop';
 
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
