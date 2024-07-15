@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+
 import { TextEditorContext } from './context/TextEditorContext';
 import { Box, Container, Paper, Typography } from '@mui/material';
 
